@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--This is a comment, Auther: Rishabh Lala-->
+<!--Today's date is 
+November 15, 2023
+This is an interpreted langauge, therefore, never put any sensative information like passwords, as there is always a hacker interested in reverse engineering your code
+-->
+<html>
+<head><title>Hello ISM6225!</title>
+<link rel="STYLESHEET" HREF="css/main.css">
+<script src="js/main.js"></script>
+
+
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Data Visualization</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+
+<body>
+<IMG src="{{ url_for('static', filename='puppy.png')}}"  HEIGHT="200", class="container_A">
+
+
+<!--<h1><a href="AboutMe.html" class="link textcolorwhite"> </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Covid_Data.html" class="textcolorwhite"></a></h1>-->
+
+
+
+<!--<script>document.getElementById("demo").innerHTML="Hello Javascript"</script>
+-->
+
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid"> 
+            <a class="textcolorwhite" href="/index">HOME</a>
+            <a class=" link textcolorwhite navbar-nav" href="/covid_data">COVID 19 DATA</a> 
+            <a class=" link textcolorwhite navbar-nav" href="/aboutme">ABOUT ME</a>
+            <a class=" link textcolorwhite navbar-nav" href="/enternew">NEW PATIENT</a>                        
+                                     
+        </div>
+    </nav>  
+    <!-- Hero Section -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1 class="display-4">COVID-19 DATA VISUALIZATION 2020 THRU 2023</h1>
+            <p class="lead"><b>NEW YORK CASE LOAD VS HOSPITALIZATION VS DEATH COUNT.</B></p>
+        </div>
+    </div>
+    
+    <!-- Information Section -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>ABOUT THE DATA</h2>
+                <p><B>Daily count of NYC residents who tested positive for SARS-CoV-2, who were hospitalized with COVID-19, and deaths among COVID-19 patients.</B></p> <BR>
+                    DATA SOURCE: https://data.cityofnewyork.us/api/views/rc75-m7u3/rows.json?accessType=DOWNLOAD 
+                .</p>
+            </div>
+            <div class="col-md-6">
+                <h2>VISUALIZATION</h2>
+                <p><B>Visualization is made with the help of chart.js website. A single chart shows daily cases, hospitalizations, and daily deaths in New York. </B><BR></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>COVID-19 Data Visualization by Rishabh Lala © November 2023</p>
+        </div>
+    </footer>
+    
+ 
+    
+</body>
+</html>

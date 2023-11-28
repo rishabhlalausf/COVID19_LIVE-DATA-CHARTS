@@ -1,0 +1,36 @@
+<IMG src="{{ url_for('static', filename='puppy.png')}}"   HEIGHT="100", class="container_A">
+{% extends "layout.html" %}
+{% block title %}
+Add New Covid Patient Details
+{% endblock %}
+{% block content %}
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   
+        <form action="{{ url_for('addrec') }}" method="POST">
+            <h3>Please Add the New COVID Patient Information:</h3>
+            Name<br>
+            <input type="text" name="nm" /><br>
+
+            Address<br>
+            <textarea name="add"></textarea><br>
+
+            City<br>
+            <input type="text" name="city" /><br>
+
+            Zip Code<br>
+            <input type="text" name="zip" /><br>
+
+            Case Type<br>
+            <select name="case_type">
+                <option value="hospitalization">Hospitalization</option>
+                <option value="death">Death</option>
+                <option value="positive">Covid Positive</option>
+            </select><br>
+
+            <input type="submit" value="Submit" /><br>
+
+            
+        </form>
+{% endblock %}

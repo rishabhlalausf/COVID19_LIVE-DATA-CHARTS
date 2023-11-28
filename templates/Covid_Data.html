@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <link rel="STYLESHEET" HREF="css/main.css">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <IMG src="{{ url_for('static', filename='puppy.png')}}"   HEIGHT="100", class="container_A">
+          <!-- Navigation Bar -->
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container">
+                  <a class="nav-link textcolorwhite" href="/index">HOME</a>
+                  <a class=" link textcolorwhite navbar-nav" href="/covid_data">COVID DATA</a> 
+                  <a class=" link textcolorwhite navbar-nav" href="/aboutme">ABOUT ME</a>             
+              </div>
+          </nav>
+        <!-- <h1><a href="index.html" class="text_align">Back</a></h1>-->
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<canvas id="myChart"></canvas>
+
+
+<script>
+
+
+  // Define arrays for labels and data
+  const labels = [];
+  const caseCounts = [];
+  const deathCounts = [];
+  const hospitalizedCounts = [];
+  
+
+  // Fetch the JSON data
+  fetch('https://data.cityofnewyork.us/api/views/rc75-m7u3/rows.json?accessType=DOWNLOAD')
+    .then(response => response.json())
+    .then(jsonData => {
+      // Assuming the actual data array is nested under 'data'
+      const dataArray = jsonData.data;
+
+      // Process dataArray to extract case counts and corresponding labels
+      dataArray.forEach(item => {
+        labels.push(item[8]); 
+        caseCounts.push(item[9]);
+        hospitalizedCounts.push(item[11]);
+        deathCounts.push(item[12]); 
+
+      });
+
+      // Chart data structure
+      const data = {
+        labels: labels,
+        datasets: [{
+          label: 'Case Count',
+          data: caseCounts, 
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1
+        },
+      
+         {
+            label: 'Hospitalized Count',
+            data: hospitalizedCounts,
+            borderColor: 'rgb(255, 99, 132)',
+            tension: 0.1
+          },
+          {
+            label: 'Death Count',
+            data: deathCounts,
+            borderColor: 'rgb(54, 200, 100)',
+            tension: 0.1
+          }]}
+      ;
+
+      // Create the chart
+      const ctx = document.getElementById('myChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+              title: {
+                display: true,
+                text: 'Case Count Over Time'
+              }
+            },
+          },
+      });
+    })
+    .catch(error => console.error('Error loading or processing data:', error));
+</script>
+
+
+    
+
+  
+</body>
+</html>

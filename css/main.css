@@ -1,0 +1,80 @@
+/**
+Sample css code
+*/
+/* Set height to 100% for body and html to enable the background image to cover the whole page: */
+
+
+BODY{
+  background-color: rgb(249, 250, 248);
+}
+
+.container_A {
+  display: block; /* Changed from flex to block for an image */
+  margin: auto; /* Horizontal centering for block elements */
+  height: 200px; 
+}
+
+
+.navbar-nav > li > a {
+  padding-left: 0px;
+  padding-right: 0px;
+  
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+
+  }
+
+  .text_align {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    font-size: xx-large;
+  
+    } 
+
+    .text_align_center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: xx-large;
+    
+      } 
+
+      
+
+.link {
+
+    justify-content: center;
+    align-items: center;
+    
+    margin-left: 500px; /* Add space to the right of the first link */
+}
+
+
+
+/*Change text color and decoration for a tags inside middle class and ul>li element*/
+.textcolor:hover{
+color: aliceblue;  
+font-size:xx-large;
+  
+}
+
+.textcolorwhite{
+
+color: aliceblue;
+font-size:x-large;
+text-decoration: none;
+}
+
+
+P{background-color:rgb(165, 173, 166) ;}
+
+H1 {
+  background-color: rgb(33, 185, 223);
+}
+
